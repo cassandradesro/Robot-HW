@@ -1,13 +1,22 @@
 console.log("Hello World from main.js!");
 
-
-
 var doTheThing = function() {
 	console.log("do the thing!");
+    var colorElement = document.querySelector('[name="color"]');
+    var widthElement = document.querySelector('[name="width"]');
+    var heightElement = document.querySelector('[name="height"]');
+    var colorValue = colorElement.value;
+    var widthValue = widthElement.value + "px";
+    var heightValue = heightElement.value + "px";
+    var bot = document.querySelector(".bot");
+    bot.style.width = widthValue;
+    bot.style.height = heightValue;
+    var botParts = document.querySelectorAll(".head, .torso, .leg, .leg2");
+   	for (var i = 0; i < botParts.length; i++) {
+     	botParts[i].style.backgroundColor = colorValue;
+    }; 
+};
 
-	// This function runs when the user presses the "Go!" button.
 
-	// It needs to read what's been entered in the three input elements (look it up)
-	// and apply those values to the styling of the various elements that comprise the robot.
 
-}
+
